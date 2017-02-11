@@ -3,9 +3,9 @@ const path = require('path');
 const cleanCss = require('../../index.js');
 
 module.exports = {
-  name : 'acid test',
+  name : 'SASS function',
   this : function () {
-    const str = fs.readFileSync(path.resolve('test/tests/acid-test.dirty.scss'), 'utf8');
+    const str = fs.readFileSync(path.resolve('test/styles/sass-function.dirty.scss'), 'utf8');
 
     const clean = cleanCss({
       css : str
@@ -14,6 +14,6 @@ module.exports = {
     return clean;
   },
   isEqual : function () {
-    return fs.readFileSync(path.resolve('test/tests/acid-test.clean.scss'), 'utf8');
+    return fs.readFileSync(path.resolve('test/styles/sass-function.clean.scss'), 'utf8');
   }
 };
