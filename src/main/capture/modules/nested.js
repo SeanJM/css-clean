@@ -8,13 +8,12 @@ function nested(buffer, depth) {
   let args;
   let s = buffer.string;
 
-  while (s[start] !== '{' && s[start - 1] !== '#' && s[start]) {
+  while ((s[start] !== '{' || s.substring(start - 1, start + 1) === '#{') && s[start]) {
     start++;
   }
 
-  console.log(buffer.string.substring(start));
 
-  args = s.substr(0, start).trim();
+  args = s.substring(0, start).trim();
   b = between('{', '}', s.substr(start));
   buffer.string = s.substr(start + b.end + 1);
 
