@@ -1,10 +1,10 @@
-const smartSort = require('../../vendor/smartSort');
-const splitByComma = require('../../vendor/splitByComma');
+const smartSort = require('../../../vendor/smartSort');
+const splitByComma = require('../../../vendor/splitByComma');
 
 let sortList = {};
 
 sortList['property group'] = function (that, list) {
-  var order = require('../../PROPERTIES_LIST');
+  var order = require('../../../constants/PROPERTIES_LIST');
 
   list.sort(function (a, b) {
     var ai = order.indexOf(a.name);

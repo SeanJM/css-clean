@@ -1,4 +1,4 @@
-const splitByComma = require('../../../vendor/splitByComma');
+const splitByComma = require('../../../../vendor/splitByComma');
 
 module.exports = function (that, element) {
   const tab = new Array((element.depth * that.tabSize) + 1).join(that.tabChar);

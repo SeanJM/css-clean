@@ -1,4 +1,4 @@
-const splitByComma = require('../../vendor/splitByComma');
+const splitByComma = require('../../../vendor/splitByComma');
 const nested = require('./nested');
 
 function align(element, value, tab) {

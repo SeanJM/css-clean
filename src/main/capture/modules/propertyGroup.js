@@ -1,6 +1,4 @@
-const l = require('lasso-string');
-
-function propertyGroup(buffer, depth) {
+function propertyGroup(buffer) {
   let n = buffer.string.length;
   let i = 0;
   let m;

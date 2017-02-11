@@ -1,4 +1,4 @@
-const smartSort = require('../../vendor/smartSort');
+const smartSort = require('../../../vendor/smartSort');
 
 let sortEach = {};
 

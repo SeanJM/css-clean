@@ -1,9 +1,9 @@
 const nested = require('./nested');
-const lasso = require('lasso-string');
+const between = require('../../tools/between');
 
 function sassMixin(buffer, depth) {
   let c = nested(buffer, depth);
-  let args = lasso.between(c.arguments, '(', ')');
+  let args = between('(', ')', c.arguments);
   let m = c.arguments.match(/(@mixin)[ ]+([^\(]+)/);
 
   buffer.string = buffer.string.substr(c.length);

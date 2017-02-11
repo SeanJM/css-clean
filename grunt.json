@@ -3,5 +3,6 @@
   "dest" : "dist/",
   "isBundle": false,
   "sourceMap": false,
-  "isProduction": false
+  "isProduction": false,
+  "ignore": "javascript"
 }

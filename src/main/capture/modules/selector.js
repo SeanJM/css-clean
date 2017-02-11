@@ -3,6 +3,8 @@ const nested = require('./nested');
 function selector(buffer, depth) {
   let c = nested(buffer, depth);
 
+  console.log(c);
+
   buffer.string = buffer.string.substr(c.length);
 
   return {

@@ -1,5 +1,5 @@
 const l = require('lasso-string');
-const splitByComma = require('../../../vendor/splitByComma');
+const splitByComma = require('../../../../vendor/splitByComma');
 
 function isGradient(value) {
   return /^(-(webkit|moz|o|ms)-|)(linear|radial)-gradient/.test(value);

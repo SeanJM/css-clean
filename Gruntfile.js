@@ -1,37 +1,80 @@
-const flatman = require('./grunt/flatman');
-const tasks = require('./grunt/tasks');
+const fs = require('fs');
+const path = require('path');
 const initConfig = require('./grunt/initConfig');
-const readme = require('./grunt/readme');
-const clean = require('./grunt/clean');
+const config = JSON.parse(fs.readFileSync(path.resolve('grunt.json')));
 
-require('./grunt/setup');
+module.exports = function (grunt) {
+  let tasks = [
+    'setup'
+  ];
 
-module.exports = function(grunt) {
-  // Project configuration.
-  initConfig.pkg = grunt.file.readJSON('package.json');
-  grunt.initConfig(initConfig);
+  require('./grunt/getFileTypes')(function (types) {
+    initConfig.pkg = grunt.file.readJSON('package.json');
+    grunt.initConfig(initConfig);
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-svgstore');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+    tasks.push(
+      'readme',
+      'flatman'
+    );
 
-  grunt.registerTask('flatman', function () {
-    flatman.task(this.async());
+    if (types.img.length) {
+      if (config.isProduction) {
+        grunt.loadNpmTasks('grunt-contrib-imagemin');
+        tasks.push('imagemin');
+      } else {
+        tasks.push('copy:images');
+      }
+    }
+
+    if (types.svg.length) {
+      grunt.loadNpmTasks('grunt-svgstore');
+      tasks.push('svgstore');
+    }
+
+    if (types.sass.length) {
+      tasks.push('sass');
+      tasks.push('autoprefixer');
+      grunt.loadNpmTasks('grunt-autoprefixer');
+      grunt.loadNpmTasks('grunt-contrib-sass');
+      if (config.isProduction) {
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
+      }
+    }
+
+    if (config.ignore && !config.ignore.includes('javascript')) {
+      if (types.js && config.isProduction) {
+        grunt.loadNpmTasks('grunt-contrib-uglify');
+        tasks.push('uglify');
+      } else {
+        grunt.loadNpmTasks('grunt-contrib-concat');
+        tasks.push('concat');
+      }
+    }
+
+    tasks.push('test');
+
+    grunt.registerTask('setup', function () {
+      require('./grunt/setup')(this.async());
+    });
+
+    grunt.registerTask('flatman', function () {
+      require('./grunt/flatman').task(this.async());
+    });
+
+    grunt.registerTask('readme', function () {
+      require('./grunt/readme').task(this.async());
+    });
+
+    grunt.registerTask('test', function () {
+      require('./grunt/test').task(this.async());
+    });
+
+    if (!config.isProduction) {
+      grunt.loadNpmTasks('grunt-contrib-copy');
+      grunt.loadNpmTasks('grunt-contrib-watch');
+      tasks.push('watch');
+    }
+
+    grunt.registerTask('default', tasks);
   });
-
-  grunt.registerTask('readme', function () {
-    readme.task(this.async());
-  });
-
-  grunt.registerTask('clean', function () {
-    clean.task(this.async());
-  });
-
-  grunt.registerTask('default', tasks);
 };
