@@ -27,10 +27,10 @@ function isEmptyLine(wordList) {
   );
 }
 
-function splitByLineBreak(that, element) {
+function splitByLineBreak(settings, element) {
   let lines = [];
   let lineIndex = 0;
-  let tabLength = that.getTab(element.depth + 2).length;
+  let tabLength = settings.tabSize + element.depth + 2;
 
   let raw = element.value
     .map(a => a
@@ -72,7 +72,7 @@ function splitByLineBreak(that, element) {
       lines[lineIndex] = [];
     } else if (
       tabLength + lines[lineIndex].join(' ').length + word.length
-      > that.lineBreak
+      > settings.lineBreak
     ) {
       lineIndex++;
       lines[lineIndex] = [];
@@ -91,13 +91,13 @@ function splitByLineBreak(that, element) {
   element.value = lines.map(a => a.join(' ').replace(/\s+/g, ' '));
 }
 
-function formatSectionTitle(that, element) {
-  const tab = that.getTab(element.depth);
+function formatSectionTitle(settings, element) {
+  const tab = settings.getTab(element.depth);
   let value = element.value.map(function (line, i) {
     let $tab = '';
 
     if (i > 0) {
-      $tab = tab + that.getTab(1);
+      $tab = tab + settings.getTab(1);
     }
 
     line = line.trim();
@@ -109,8 +109,8 @@ function formatSectionTitle(that, element) {
   return '/*' + value.join('') + '*/';
 }
 
-function formatSpecialComment(that, element) {
-  const tab = that.getTab(element.depth);
+function formatSpecialComment(settings, element) {
+  const tab = settings.getTab(element.depth);
 
   if (element.value.length === 1) {
     return '/*' + element.value.join('\n') + ' */';
@@ -119,22 +119,22 @@ function formatSpecialComment(that, element) {
   return '/*' + element.value.map(function (line, i) {
     let $tab = '';
     if (i > 0) {
-      $tab = tab + that.getTab(1);
+      $tab = tab + settings.getTab(1);
     }
     return $tab + line.trim();
   }).join('\n') + '\n' + tab + ' */';
 }
 
-function formatDefault(that, element) {
-  const tab = that.getTab(element.depth);
+function formatDefault(settings, element) {
+  const tab = new Array(settings.tabSize * element.depth).join(settings.tabChar);
 
-  splitByLineBreak(that, element);
+  splitByLineBreak(settings, element);
 
   return element.value.length > 1
     ? '/**\n' +
 
     element.value.map(function (line, i) {
-      let $tab = that.getTab(element.depth);
+      let $tab = settings.getTab(element.depth);
       line = ' * ' + line.trim();
       return $tab + line;
     }).join('\n') +
@@ -143,19 +143,21 @@ function formatDefault(that, element) {
   : '/* ' + element.value.join('') + ' */';
 }
 
-function commentBlock(that, element) {
+function commentBlock(settings, element) {
   /*
   Titling support
   http://cssguidelin.es/#titling
   */
 
+  console.log(element);
+
   if (isSectionTitle(element)) {
-    return formatSectionTitle(that, element);
+    return formatSectionTitle(settings, element);
   } else if (isSpecialComment(element)) {
-    return formatSpecialComment(that, element);
+    return formatSpecialComment(settings, element);
   }
 
-  return formatDefault(that, element);
+  return formatDefault(settings, element);
 }
 
 module.exports = commentBlock;
