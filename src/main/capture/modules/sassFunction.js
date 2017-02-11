@@ -12,8 +12,8 @@ function sassFunction(buffer, depth) {
     content : c.content,
     name : m[1],
     value : m[2].trim(),
-    arguments : args
-      ? args[1].split(',').map(a => a.trim())
+    arguments : args.value
+      ? args.value.split(',').map(a => a.trim())
       : ''
   };
 }
