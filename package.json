@@ -1,0 +1,25 @@
+{
+  "name": "css-clean",
+  "version": "1.0.0",
+  "description": "A utility for formatting css and sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeanJM/css-clean.git"
+  },
+  "keywords": [
+    "css",
+    "prettyprint",
+    "format",
+    "sass"
+  ],
+  "author": "Sean MacIsaac <seanjmacisaac@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeanJM/css-clean/issues"
+  },
+  "homepage": "https://github.com/SeanJM/css-clean#readme"
+}

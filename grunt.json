@@ -1,0 +1,7 @@
+{
+  "src" : "src/",
+  "dest" : "dist/",
+  "isBundle": false,
+  "sourceMap": false,
+  "isProduction": false
+}
