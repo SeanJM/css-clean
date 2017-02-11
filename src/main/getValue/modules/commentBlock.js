@@ -1,5 +1,3 @@
-const lasso = require('lasso-string');
-
 function isSpecialComment(element) {
   /*!
     Theme Name: casino
@@ -133,8 +131,8 @@ function formatDefault(settings, element) {
   return element.value.length > 1
     ? '/**\n' +
 
-    element.value.map(function (line, i) {
-      let $tab = settings.getTab(element.depth);
+    element.value.map(function (line) {
+      let $tab = new Array(settings.tabSize * element.depth).join(settings.tabChar);
       line = ' * ' + line.trim();
       return $tab + line;
     }).join('\n') +
@@ -148,8 +146,6 @@ function commentBlock(settings, element) {
   Titling support
   http://cssguidelin.es/#titling
   */
-
-  console.log(element);
 
   if (isSectionTitle(element)) {
     return formatSectionTitle(settings, element);
