@@ -3,6 +3,8 @@ module.exports = function between(a, b, string) {
   let i = 0;
   let n = string.length;
   let start;
+  let alen = a.length;
+  let blen = b.length;
 
   while (string[i] !== a && string[i]) {
     i++;
@@ -11,9 +13,9 @@ module.exports = function between(a, b, string) {
   start = i;
 
   for (; i < n; i++) {
-    if (string[i] === a) {
+    if (string.substring(i, i + alen) === a) {
       o += 1;
-    } else if (string[i] === b) {
+    } else if (string.substring(i, i + blen) === b) {
       o -= 1;
     }
 
