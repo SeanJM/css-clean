@@ -5,9 +5,9 @@ function isGradient(value) {
   return /^(-(webkit|moz|o|ms)-|)(linear|radial)-gradient/.test(value);
 }
 
-function formatLinearGradient(that, element, siblings) {
-  const singleTab = that.getTab(1);
-  const tab = that.getTab(element.depth);
+function formatLinearGradient(settings, element) {
+  const singleTab = new Array(settings.tabSize + 1).join(settings.tabChar);
+  const tab = new Array((element.depth * settings.tabSize) + 1).join(settings.tabChar);
   let value = splitByComma(element.value);
   let align = tab + new Array(element.align + 4).join(' ');
   let padding;
@@ -33,9 +33,9 @@ function formatLinearGradient(that, element, siblings) {
   return element.name + ': ' + element.value + ';';
 }
 
-module.exports = function (that, element, siblings) {
+module.exports = function (settings, element, siblings) {
   if (isGradient(element.value)) {
-    return formatLinearGradient(that, element, siblings);
+    return formatLinearGradient(settings, element, siblings);
   }
-  return require('./default')(that, element, siblings);
+  return require('./default')(settings, element, siblings);
 };

@@ -6,8 +6,6 @@ const clean = cssClean({
   css : fs.readFileSync(args[0], 'utf8')
 });
 
-console.log(clean);
-
 if (args.length == 1) {
   fs.writeFileSync(args[0], clean);
 } else if (args.length === 2) {
