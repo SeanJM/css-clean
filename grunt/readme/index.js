@@ -8,7 +8,7 @@ const exists = require('../lib/exists');
 function task(callback) {
   try {
 
-    if (config.isProduction && exists('test/index.js')) {
+    if (config.tasks.readme && exists('test/index.js')) {
       let test = require('../../test/index.js');
 
       test.then(function (results) {

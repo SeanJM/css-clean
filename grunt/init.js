@@ -9,6 +9,12 @@ module.exports = function (grunt) {
     fs.writeFileSync('grunt.json', JSON.stringify({
       src : "src/",
       dest : "dist/",
+      tasks : {
+        js : false,
+        css : false,
+        readme : true,
+        images : false
+      },
       isBundle: false,
       sourceMap: false,
       isProduction: false

@@ -19,6 +19,6 @@ function cleanCss(props) {
   return getValue(settings, cssObject);
 }
 
-module.exports = function (string) {
-  return cleanCss(string);
+module.exports = function (props) {
+  return cleanCss(props);
 };

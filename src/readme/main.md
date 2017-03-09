@@ -1,9 +1,4 @@
-# Css Clean 1.1.0
-#### License: [MIT](https://opensource.org/licenses/MIT)
-
-#### ✅ [All 17 tests pass](#tests)
-##  css-clean package
-
+# css-clean package
 
 We all write code a little quickly sometimes. This is a package which offers a helping hand to sort, align and clean your CSS and SASS.
 
@@ -199,28 +194,3 @@ $gutter-width : 10px;
 ```
 
 Feel free to contribute.
-
-
-***
-
-## Tests
-
-```
-   1. Background......................................................... ✅
-   2. basic test......................................................... ✅
-   3. acid test.......................................................... ✅
-   4. Block Comment...................................................... ✅
-   5. SASS Each (basic).................................................. ✅
-   6. SASS for........................................................... ✅
-   7. SASS function...................................................... ✅
-   8. SASS Import (basic)................................................ ✅
-   9. SASS @mixin........................................................ ✅
-  10. SASS nested (basic)................................................ ✅
-  11. SASS Placeholders (basic).......................................... ✅
-  12. SASS while......................................................... ✅
-  13. Sorted Selectors (basic)........................................... ✅
-  14. test 10............................................................ ✅
-  15. Nested multiple selectors.......................................... ✅
-  16. SASS @mixin (arguments)............................................ ✅
-  17. SASS Selector Eval (basic)......................................... ✅
-```

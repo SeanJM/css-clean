@@ -1,6 +1,12 @@
 {
   "src" : "src/",
   "dest" : "dist/",
+  "tasks" : {
+    "js" : false,
+    "css" : false,
+    "readme" : true,
+    "images" : false
+  },
   "isBundle": false,
   "sourceMap": false,
   "isProduction": false,

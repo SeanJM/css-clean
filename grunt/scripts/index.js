@@ -43,19 +43,17 @@ if (config.isBundle) {
 } else {
   for (var k in files.src) {
     if (files.src[k].length) {
-      if (!config.ignore.includes('javascript')) {
-        task.concat[k] = {
-          options : {
-            sourceMap : config.sourceMap,
-          },
-          src : files.src[k],
-          dest : files.dest[k]
-        };
-      }
+      task.concat[k] = {
+        options : {
+          sourceMap : config.sourceMap,
+        },
+        src : files.src[k],
+        dest : files.dest[k]
+      };
 
       task.watch[k] = {
         files : files.src[k],
-        tasks : !config.ignore.includes('javascript') ? [ 'concat:' + k, 'test' ] : [ 'test' ]
+        tasks : [ 'concat:' + k ]
       };
 
       if (config.useClosure) {
