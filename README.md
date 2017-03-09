@@ -12,6 +12,7 @@ We all write code a little quickly sometimes. This is a package which offers a h
 example settings
 ```
 cleanCss({
+  css : String
   lineBreak : Number, // Optional
   tabSize : 2,  // Optional, default is 2
   tabChar : ' ',  // Optional, default is ' '
