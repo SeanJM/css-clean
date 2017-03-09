@@ -12,7 +12,6 @@ function nested(buffer, depth) {
     start++;
   }
 
-
   args = s.substring(0, start).trim();
   b = between('{', '}', s.substr(start));
   buffer.string = s.substr(start + b.end + 1);

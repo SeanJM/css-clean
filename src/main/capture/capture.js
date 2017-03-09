@@ -43,8 +43,9 @@ function getScope(string) {
     return 'comment inline';
   }
 
-  if (string.substr(0, 2) === '/*')
+  if (string.substr(0, 2) === '/*') {
     return 'comment block';
+  }
 
   if (/^\$[^:]+?:[^;]+?;/.test(string)) {
     return 'sass variable assignment';
@@ -104,7 +105,7 @@ function getScope(string) {
     return 'font face';
   }
 
-  if (isSelector(string) && /^%|^[^\%^{]+?%[^\{]+?\{/.test(string)) {
+  if (isSelector(string) && /^%/.test(string)) {
     return 'sass placeholder';
   }
 
