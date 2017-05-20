@@ -1,0 +1,76 @@
+// A comment
+
+@each $header, 
+      $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+  #{$header} {
+    font-size : $size;
+  }
+}
+
+@while $i > 0 {
+  .item-#{$i} {
+    width : 2em * $i;
+  }
+  $i : $i - 2;
+}
+
+#sidebar {
+  width : grid-width(5);
+}
+
+.empty {}
+
+.empty_nested {
+  .empty {}
+}
+
+@media only screen
+       and (min-device-width : 320px)
+       and (device-width     : 320px)
+       and (max-device-width : 736px),
+       tv
+       and (min-width        : 320px)
+       and (device-width     : 320px)
+       and (width            : 736px) {
+  .hamburger {
+    top  : 10px;
+    left : 10px;
+  }
+
+  .hamburger_icon {
+    width               : 30px;
+    height              : 30px;
+    background-position : -200px -105px;
+  }
+
+  .hamburger_icon_empty {}
+
+  %hamburger-icon {
+    background-image : url('hamburger_mobile_icon_x1.png');
+  }
+
+  .hamburger_menu_item_label {
+    font-size : $default - 1;
+  }
+
+  .hamburger_menu {
+    width : 170px;
+  }
+}
+
+.hamburger_icon_empty {}
+
+.empty_nested {
+  .empty {}
+}
+
+@media only screen
+       and (min-device-pixel-ratio : 2),
+       only screen
+       and (min-resolution         : 192dpi) {
+  .toolbar_icon {
+    background-image : url('toolbarControl_x2.png');
+  }
+}
+
+/* * end upload css */

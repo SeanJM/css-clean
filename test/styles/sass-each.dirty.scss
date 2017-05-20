@@ -1,0 +1,7 @@
+@each $animal, $color, $cursor in (puma, black, default), (sea-slug, blue, pointer), (egret, white, move) {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+    cursor: $cursor;
+    border: 2px solid $color;
+  }
+}

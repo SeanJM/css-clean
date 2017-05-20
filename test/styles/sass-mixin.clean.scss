@@ -1,0 +1,11 @@
+@mixin does-parent-exist {
+  @if & {
+    &:hover {
+      color : red;
+    }
+  } @else {
+    a {
+      color : red;
+    }
+  }
+}

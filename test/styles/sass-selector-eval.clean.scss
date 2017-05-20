@@ -1,0 +1,5 @@
+.#{$animal}-icon {
+  border           : 2px solid $color;
+  background-image : url('/images/#{$animal}.png');
+  cursor           : $cursor;
+}

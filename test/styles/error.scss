@@ -1,0 +1,209 @@
+.mdl-card__title,
+html {
+  color : #555C68;
+}
+
+.pointer {
+  cursor : pointer;
+}
+
+img {
+  max-width : 100%;
+}
+
+.not-visible {
+  visibility : hidden;
+}
+
+.mdl-tooltip {
+  max-width : 250px;
+}
+
+a {
+  text-decoration : none;
+}
+
+a:not(.mdl-button):hover {
+  text-decoration : underline;
+}
+
+.mdl-cell {
+  position : relative;
+}
+
+.sorglos-align--bottom {
+  position : absolute;
+}
+
+.mdl-cell--no-spacing {
+  margin : 0;
+}
+
+.mdl-list__item-no-spacing {
+  padding : 0;
+}
+
+.mdl-layout--margin-0 {
+  margin : 0;
+}
+
+.mdl-layout--margin--bottom-5 {
+  margin-bottom : 5px !important;
+}
+
+.mdl-layout--margin--top-0 {
+  margin-top : 0;
+}
+
+.mdl-layout--padding-0 {
+  padding : 0;
+}
+
+.mdl-layout--padding-10 {
+  padding : 10px;
+}
+
+.mdl-layout--padding-bottom-0 {
+  padding-bottom : 0 !important;
+}
+
+.mdl-layout--padding-top-0 {
+  padding-top : 0 !important;
+}
+
+.mdl-textfield.mdl-layout--padding-bottom-0 > label.mdl-textfield__label:after {
+  bottom : 0 !important;
+}
+
+.mdl-textfield__label-no-padding {
+  top : 4px;
+}
+
+.mdl-textfield__label-no-padding::after {
+  bottom : 0;
+}
+
+.mdl-dialog--large {
+  max-width : 95%;
+}
+
+.mdl-layout--width-100 {
+  width       : 100% !important;
+  user-select : none;
+}
+
+.mdl-cell-6-col--margin-left-0 {
+  margin-left : 0;
+}
+
+.mdl-cell-6-col--margin-right-0 {
+  margin-right : 0;
+}
+
+@media (max-width: 839px) {
+  .sorglos-align--bottom {
+    position : relative;
+  }
+}
+
+main.mdl-layout__content {
+  flex : 1 0 auto;
+}
+
+.more-space-top-10px {
+  margin-top : 10px;
+}
+
+.content-grid {
+  max-width : 960px;
+}
+
+.mdl-layout__title img {
+  max-height : 38px;
+}
+
+.sorglos-header {
+  background-color : white;
+}
+
+.sorglos-header,
+.sorglos-header .material-icons,
+.sorglos-header .mdl-navigation__link {
+  color : #333;
+}
+
+.sorglos-card.sorglos-login {
+  margin-left : auto;
+}
+
+.mdl-layout--center {
+  margin-left : auto;
+}
+
+.mdl-cell > h5:first-child {
+  margin-top : 0;
+}
+
+.sorglos-card.sorglos-login > .mdl-card__media {
+  background-color : #fff;
+}
+
+.sorglos-card.sorglos-login .mdl-card__supporting-text {
+  padding-top : 0;
+}
+
+.sorglos-card.sorglos-login > .mdl-card__media > img {
+  position : relative;
+}
+
+.mdl-card__media {
+  margin : 0;
+}
+
+h1.mdl-mega-footer__heading {
+  padding-bottom : 15px;
+}
+
+.mdl-mega-footer__link-list li {
+  padding-bottom : 10px;
+}
+
+.sorglos-bold-link {
+  text-decoration : none;
+}
+
+.sorglos-footer-social__icon {
+  color : #B6B6B6;
+}
+
+.sorglos-footer-social__icon:hover {
+  color : #FFF;
+}
+
+.sorglos-footer-social__list {
+  list-style-type : none;
+}
+
+.sorglos-bold-link:hover {
+  text-decoration : none;
+}
+
+.sorglos-intro {
+  background-image : url('../../images/sorglosbox_home.jpg');
+}
+
+.mdl-circle {
+  font-size : 20px;
+}
+
+.mdl-circle::after {
+  border-radius : 50%;
+}
+
+.mdl-circle div {
+  color : white;
+}
+
+.footerBadgeLink {
+  position : fixed;
+}

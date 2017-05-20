@@ -1,0 +1,8 @@
+li.somesel {
+  display : block;
+
+  > a {
+    display : block;
+    float   : left;
+  }
+}

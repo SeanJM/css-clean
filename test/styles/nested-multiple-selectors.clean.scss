@@ -1,0 +1,11 @@
+.body-main {
+  .device-desktop & {
+    min-width : 960px;
+    padding   : 0 $SPACER 0;
+  }
+  
+  .device-mobile & {
+    width   : 100%;
+    padding : 0 $UNIT * 4;
+  }
+}

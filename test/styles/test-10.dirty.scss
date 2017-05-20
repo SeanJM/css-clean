@@ -1,0 +1,12 @@
+.demo-toolbar {
+  .button--mousedown {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow : 0 1px 1px rgba(0, 0, 0, 0.5) inset;
+  }
+}
+
+@media only screen and (min-device-pixel-ratio : 2), only screen and (min-resolution : 192dpi) {
+  .toolbar_icon {
+    background-image: url('toolbarControl_x2.png');
+  }
+}

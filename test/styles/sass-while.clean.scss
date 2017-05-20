@@ -1,0 +1,7 @@
+@while $i > 0 {
+  $i : $i - 2;
+  
+  .item-#{$i} {
+    width : 2em * $i;
+  }
+}

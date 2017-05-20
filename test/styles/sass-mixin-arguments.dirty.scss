@@ -1,0 +1,3 @@
+@mixin linx($link, $visit, $hover, $active) {
+  a {color : $link; &:visited {position : absolute; color : $visit; } &:hover {position : absolute; color : $hover; } &:active {position : absolute; color : $active; } }
+}

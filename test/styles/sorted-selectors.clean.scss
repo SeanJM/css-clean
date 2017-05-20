@@ -1,0 +1,15 @@
+.btn-grey:hover,
+.compact-theme a,
+.compact-theme span,
+.dropdown .btn-grey:hover,
+.modal_text,
+.status-text,
+.warehouse-badge-count,
+[class*="btn-grey"],
+input[type="date"],
+input[type="number"],
+input[type="text"],
+textarea,
+th {
+  color : $grey6;
+}

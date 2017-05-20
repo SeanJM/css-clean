@@ -1,0 +1,39 @@
+.qiktracker-alert {
+  z-index: 19999999999;
+  user-select: none;
+  width: 350px;
+  top: 10px;
+  right: 10px;
+  position: fixed;
+  background: $grey-light;
+  border: 1px solid $grey;
+  border-radius: 6px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
+
+  ul {
+    margin-left:20px;
+  }
+
+  li, p {
+    color: $black;
+    font-size : $default;
+  }
+
+  p {line-height : $default * 1.25; }
+
+  li {line-height : $default * 1.1; }
+
+  li + li {
+    margin-top : 8px;
+  }
+
+  a,
+  em {
+    font : inherit;
+  }
+
+  p + p,
+  p + ul {
+    margin-top : 12px;
+  }
+}

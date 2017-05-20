@@ -1,0 +1,54 @@
+.class {
+  background : linear-gradient(
+                 red,
+                 blue
+               );
+}
+
+.class {
+  background : linear-gradient(
+                 map-get(map-get($color, blue), base),
+                 map-get(map-get($color, cyan), light)
+               );
+  background : linear-gradient(
+                 red,
+                 blue
+               ),
+               radial-gradient(
+                 red,
+                 blue
+               ),
+               -webkit-radial-gradient(
+                 red,
+                 blue
+               ),
+               linear-gradient(
+                 rgba(33, 34, 30, 0.1),
+                 rgba(33, 34, 30, 0.1)
+               );
+}
+
+.class {
+  .nested {
+    background : linear-gradient(
+                   map-get(map-get($color, blue), base),
+                   map-get(map-get($color, cyan), light)
+                 );
+    background : linear-gradient(
+                   red,
+                   blue
+                 ),
+                 radial-gradient(
+                   red,
+                   blue
+                 ),
+                 -webkit-radial-gradient(
+                   red,
+                   blue
+                 ),
+                 linear-gradient(
+                   rgba(33, 34, 30, 0.1),
+                   rgba(33, 34, 30, 0.1)
+                 );
+  }
+}
