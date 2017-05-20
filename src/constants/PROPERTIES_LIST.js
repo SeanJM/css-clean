@@ -44,6 +44,7 @@ let PROPERTIES_LIST = unzip([
   'float',
   'clear',
   'clip',
+  'clip-path',
   'margin',
   'margin-top',
   'margin-right',
