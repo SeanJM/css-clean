@@ -89,13 +89,14 @@ function splitByLineBreak(settings, element) {
   element.value = lines.map(a => a.join(' ').replace(/\s+/g, ' '));
 }
 
-function formatSectionTitle(settings, element) {
-  const tab = settings.getTab(element.depth);
+function formatSectionTitle(that, element) {
+  const tab = new Array((element.depth * that.tabSize) + 1).join(that.tabChar);
+
   let value = element.value.map(function (line, i) {
     let $tab = '';
 
     if (i > 0) {
-      $tab = tab + settings.getTab(1);
+      $tab = tab + new Array(that.tabSize + 1).join(that.tabChar);
     }
 
     line = line.trim();
@@ -107,8 +108,8 @@ function formatSectionTitle(settings, element) {
   return '/*' + value.join('') + '*/';
 }
 
-function formatSpecialComment(settings, element) {
-  const tab = settings.getTab(element.depth);
+function formatSpecialComment(that, element) {
+  const tab = new Array((element.depth * that.tabSize) + 1).join(that.tabChar);
 
   if (element.value.length === 1) {
     return '/*' + element.value.join('\n') + ' */';
@@ -117,7 +118,7 @@ function formatSpecialComment(settings, element) {
   return '/*' + element.value.map(function (line, i) {
     let $tab = '';
     if (i > 0) {
-      $tab = tab + settings.getTab(1);
+      $tab = tab + new Array(that.tabSize + 1).join(that.tabChar);
     }
     return $tab + line.trim();
   }).join('\n') + '\n' + tab + ' */';
