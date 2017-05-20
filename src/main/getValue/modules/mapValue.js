@@ -5,6 +5,8 @@ const map = {
   'font face' : require('./fontFace'),
   'media query' : require('./mediaQuery'),
   'property group' : require('./propertyGroup'),
+  'variable assignment' : require('./variableAssignment'),
+
   'sass each' : require('./sassEach'),
   'sass extend' : require('./sassExtend'),
   'sass for' : require('./sassFor'),

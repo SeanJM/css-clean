@@ -7,7 +7,6 @@ module.exports = function (that, element) {
   let align = new Array(element.align + 4).join(' ');
   let padding;
 
-
   if (element.align) {
     value = value
       .map(

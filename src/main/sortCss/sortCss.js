@@ -10,6 +10,8 @@ const SORT_DEEP = [
   'sass mixin',
   'sass include block',
   'sass extend',
+
+  'variable assignment',
   'property group',
 ];
 
@@ -18,10 +20,12 @@ const SORT_SHALLOW = [
   'sass include',
   'sass variable assignment',
   'font face',
+  'variable assignment',
   'sass function',
   'sass mixin',
   'sass include block',
   'sass placeholder',
+
 ];
 
 function sortScope(that, content, order) {

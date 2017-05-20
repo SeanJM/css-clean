@@ -3,9 +3,9 @@ const path = require('path');
 const cleanCss = require('../../index.js');
 
 module.exports = {
-  name : 'Empty selector',
+  name : 'CSS variables',
   this : function () {
-    const str = fs.readFileSync(path.resolve('test/styles/empty-selector.dirty.scss'), 'utf8');
+    const str = fs.readFileSync(path.resolve('test/styles/css-vars.dirty.scss'), 'utf8');
 
     const clean = cleanCss({
       css : str
@@ -14,6 +14,6 @@ module.exports = {
     return clean;
   },
   isEqual : function () {
-    return fs.readFileSync(path.resolve('test/styles/empty-selector.clean.scss'), 'utf8');
+    return fs.readFileSync(path.resolve('test/styles/css-vars.clean.scss'), 'utf8');
   }
 };

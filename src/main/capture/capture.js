@@ -51,6 +51,10 @@ function getScope(string) {
     return 'sass variable assignment';
   }
 
+  if (/^--[^:]+?:[^;]+?;/.test(string)) {
+    return 'variable assignment';
+  }
+
   if (string.substring(0, 7) === '@extend') {
     return 'sass extend';
   }
@@ -175,6 +179,7 @@ prototype['comment inline'] = require('./modules/commentInline');
 prototype['font face'] = require('./modules/fontFace');
 prototype['media query'] = require('./modules/mediaQuery');
 prototype['property group'] = require('./modules/propertyGroup');
+prototype['variable assignment'] = require('./modules/variableAssignment');
 prototype.selector = require('./modules/selector');
 
 // SASS

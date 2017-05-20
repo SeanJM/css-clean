@@ -1,11 +1,16 @@
 const mapValue = require('./modules/mapValue');
 
+const noNewLine = [
+  'sass variable assignment',
+  'variable assignment'
+];
+
 function getValue(settings, cssObject) {
   return mapValue(settings, cssObject)
     .map(function (value, i) {
       let element = cssObject[i];
       return (
-        element.scope === 'sass variable assignment'
+        noNewLine.indexOf(element.scope) > -1
         && !element.last
       ) ? value
         : value + '\n';

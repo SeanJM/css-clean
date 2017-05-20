@@ -5,6 +5,7 @@ const ALIGN_TOGETHER = [
   'sass include arguments',
   'sass extend',
   'sass variable assignment',
+  'variable assignment',
 ];
 
 function index(group, depth) {
