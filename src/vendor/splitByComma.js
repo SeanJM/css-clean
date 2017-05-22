@@ -2,7 +2,7 @@ function splitByComma (value) {
   var open = 0;
   var index = 0;
   var i = 0;
-  var n = value.length;
+  var n = value ? value.length : 0;
   var lines = [''];
 
   for (; i < n; i++) {
