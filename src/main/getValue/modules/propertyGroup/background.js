@@ -15,10 +15,10 @@ function formatLinearGradient(settings, element) {
   if (element.align) {
     value = value
       .map(function (a, line) {
-        let between = l.between(a, '(', ')');
-        let gradient = a.substr(0, between.start);
-        let split = splitByComma(between[1]);
-        let format = split.map((b, x) => align + singleTab + b.trim()).join(',\n');
+        let between = l.between('(', ')', a);
+        let gradient = a.substr(0, between.start - 1);
+        let split = splitByComma(between.value);
+        let format = split.map(b => align + singleTab + b.trim()).join(',\n');
         return line === 0
           ? gradient + '(\n' + format + '\n' + align + ')'
           : align + gradient + '(\n' + format + '\n' + align + ')';

@@ -1,4 +1,4 @@
-# Css Clean 1.3.0
+# Css Clean 1.3.1
 #### License: [MIT](https://opensource.org/licenses/MIT)
 
 #### ✅ [All 22 tests pass](#tests)
