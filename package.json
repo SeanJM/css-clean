@@ -1,6 +1,6 @@
 {
   "name": "css-clean",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A utility for formatting css and sass",
   "main": "index.js",
   "bin": {
