@@ -245,6 +245,7 @@ let PROPERTIES_LIST = unzip([
   'image-resolution',
   'object-fit',
   'object-position',
+  '-prefix-clip-path',
   'mask',
   'mask-type',
   'mark',
