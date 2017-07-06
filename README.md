@@ -1,7 +1,7 @@
 # Css Clean 1.4.0
 #### License: [MIT](https://opensource.org/licenses/MIT)
 
-#### ✅ [All 22 tests pass](#tests)
+#### ✅ [All 23 tests pass](#tests)
 ##  css-clean package
 
 
@@ -143,9 +143,10 @@ $gutter-width : 10px;
 ##### After
 
 ```css
-@import "variables.scss",
-        "buttons.scss",
-        "forms.scss";
+@import
+  "variables.scss",
+  "buttons.scss",
+  "forms.scss";
 ```
 
 ## Make your `@each` statements easier to read
@@ -227,6 +228,7 @@ Feel free to contribute.
   18. Special comment.................................................... ✅
   19. test 10............................................................ ✅
   20. Nested multiple selectors.......................................... ✅
-  21. SASS @mixin (arguments)............................................ ✅
-  22. SASS Selector Eval (basic)......................................... ✅
+  21. SASS Import (nested)............................................... ✅
+  22. SASS @mixin (arguments)............................................ ✅
+  23. SASS Selector Eval (basic)......................................... ✅
 ```

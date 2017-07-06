@@ -3,10 +3,10 @@ const path = require('path');
 const cleanCss = require('../../index.js');
 
 module.exports = {
-  name : 'acid test',
+  name : 'SASS Import (nested)',
   this : function () {
     const str = fs.readFileSync(
-      path.resolve('test/styles/acid-test.dirty.scss'),
+      path.resolve('test/styles/sass-import-nested.dirty.scss'),
       'utf8'
     );
 
@@ -18,7 +18,7 @@ module.exports = {
   },
   isEqual : function () {
     return fs.readFileSync(
-      path.resolve('test/styles/acid-test.clean.scss'),
+      path.resolve('test/styles/sass-import-nested.clean.scss'),
       'utf8'
     );
   }

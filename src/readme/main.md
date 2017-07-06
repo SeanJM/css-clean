@@ -138,9 +138,10 @@ $gutter-width : 10px;
 ##### After
 
 ```css
-@import "variables.scss",
-        "buttons.scss",
-        "forms.scss";
+@import
+  "variables.scss",
+  "buttons.scss",
+  "forms.scss";
 ```
 
 ## Make your `@each` statements easier to read

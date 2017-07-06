@@ -1,8 +1,9 @@
 // A comment
 
-@import "buttons.scss",
-        "variables.scss",
-        "forms.scss";
+@import
+  "buttons.scss",
+  "variables.scss",
+  "forms.scss";
 
 $blue         : blue;
 $box-style1   : 5px, solid, red;
@@ -65,8 +66,9 @@ $gutter-width : 10px;
 }
 
 %ib {
-  @import          "test.scss",
-                   "test1.scss";
+  @import
+    "test.scss",
+    "test1.scss";
   display        : inline-block;
   *display       : inline;
   zoom           : 1;

@@ -1,0 +1,9 @@
+%ib {
+  @import
+    "test.scss",
+    "test1.scss";
+  display        : inline-block;
+  *display       : inline;
+  zoom           : 1;
+  vertical-align : top;
+}
