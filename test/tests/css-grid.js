@@ -3,7 +3,7 @@ const path = require('path');
 const cleanCss = require('../../index.js');
 
 module.exports = {
-  name : 'Empty selector',
+  name : 'CSS Grid',
   this : function () {
     const str = fs.readFileSync(path.resolve('test/styles/css-grid.dirty.scss'), 'utf8');
 
