@@ -1,15 +1,23 @@
-function flatten(opt, condition) {
+function flattenFeature(opt, condition) {
   let padding = new Array(opt.padding + 1 - condition.property.length).join(' ');
+  let left    = `(${condition.property}${padding} : ${condition.value})`;
   // and (min-device-width : 300px)
-  return `${condition.operator} (${condition.property}${padding} : ${condition.value})`;
+  return condition.operator
+    ? `${condition.operator} ` + left
+    : left;
 }
 
-function joinLines(opt) {
-  return opt.mediaElement
+function flattenMedia(opt, condition) {
+  return `${condition.value}`;
+}
+
+function joinLines(element, opt) {
+  let tab = new Array(((element.depth + 1) * opt.tabSize) + 1).join(opt.tabChar);
+  return opt.rule
     .map(function (condition, i) {
-      return condition.mediaType
-        ? condition.mediaType
-        : opt.tab + opt.align + flatten(opt, condition);
+      return condition.type === "media"
+        ? tab + flattenMedia(opt, condition)
+        : tab + flattenFeature(opt, condition);
     })
     .join('\n');
 }
@@ -17,34 +25,26 @@ function joinLines(opt) {
 function mediaQuery(that, element, siblings) {
   const nested = require('./nested');
 
-  let tab = new Array((element.depth * that.tabSize) + 1).join(that.tabChar);
-  let align = new Array(element.name.length + 2).join(' ');
-  let nest = nested(that, element, siblings);
-  let padding = 0;
   let value;
+  let nest   = nested(that, element, siblings);
+  let tab    = new Array((element.depth * that.tabSize) + 1).join(that.tabChar);
 
-  element.value.forEach(function (a) {
-    a.forEach(function (b) {
-      if (b.property && b.property.length > padding) {
-        padding = b.property.length;
-      }
-    });
-  });
+  let padding = element.value
+    .map(value => (value.map(b => b.property ? b.property.length : b.mediaType ? b.mediaType.property.length : 0).sort((a, b) => b - a)[0]))
+    .sort((a, b) => b - a)[0];
 
-  value = element.value.map(function (mediaElement, i) {
-    let value = joinLines({
+  value = element.value.map(function (rule, i) {
+    let value = joinLines(element, {
+      rule    : rule,
       padding : padding,
-      mediaElement : mediaElement,
-      tab : tab,
-      align : align
+      tabSize : that.tabSize,
+      tabChar : that.tabChar
     });
 
-    return i > 0
-      ? tab + align + value
-      : value;
+    return tab + value;
   }).join(',\n');
 
-  return `${element.name} ${value} {\n${nest}${tab}}`;
+  return `${element.name} \n${value} {\n${nest}${tab}}`;
 }
 
 module.exports = mediaQuery;

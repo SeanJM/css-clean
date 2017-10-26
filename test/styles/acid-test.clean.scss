@@ -229,8 +229,9 @@ h2 {
   white-space   : nowrap;
 }
 
-@media screen 
-       and (max-width : 1174px) {
+@media 
+  screen
+  and (max-width : 1174px) {
   .item-info-status .item-info {
     margin-bottom : 5px;
   }
@@ -291,14 +292,15 @@ div {
   .empty {}
 }
 
-@media only screen
-       and (min-device-width : 320px)
-       and (device-width     : 320px)
-       and (max-device-width : 736px),
-       tv 
-       and (min-width        : 320px)
-       and (device-width     : 320px)
-       and (width            : 736px) {
+@media 
+  only screen
+  and (min-device-width : 320px)
+  and (device-width     : 320px)
+  and (max-device-width : 736px),
+  tv
+  and (min-width        : 320px)
+  and (device-width     : 320px)
+  and (width            : 736px) {
   .hamburger {
     top  : 10px;
     left : 10px;
@@ -331,10 +333,11 @@ div {
   .empty {}
 }
 
-@media only screen
-       and (min-device-pixel-ratio : 2),
-       only screen
-       and (min-resolution         : 192dpi) {
+@media 
+  only screen
+  and (min-device-pixel-ratio : 2),
+  only screen
+  and (min-resolution         : 192dpi) {
   .toolbar_icon {
     background-image : url('toolbarControl_x2.png');
   }

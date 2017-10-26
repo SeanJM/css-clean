@@ -5,10 +5,11 @@
   }
 }
 
-@media only screen
-       and (min-device-pixel-ratio : 2),
-       only screen
-       and (min-resolution         : 192dpi) {
+@media 
+  only screen
+  and (min-device-pixel-ratio : 2),
+  only screen
+  and (min-resolution         : 192dpi) {
   .toolbar_icon {
     background-image : url('toolbarControl_x2.png');
   }

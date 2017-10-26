@@ -57,15 +57,26 @@ function mediaQuery(buffer, depth) {
     return lines.map(function (line) {
       let property;
       let value;
+      let s;
 
       if (line.substr(0, 4) === 'only' || line.substr(0, 3) !== 'and') {
-        return { mediaType : line };
+        s = line.split(":");
+        return s.length === 2 ? {
+          type     : "feature",
+          operator : undefined,
+          property : s[0].trim().substring(1),
+          value    : s[1].trim().substring(0, s[1].length - 2)
+        } : {
+          type     : "media",
+          value    : s[0].trim()
+        };
       }
 
       return {
+        type     : "feature",
         operator : line.split(' ')[0],
         property : getChunk(line, '(', ':'),
-        value : getChunk(line, ':', ')')
+        value    : getChunk(line, ':', ')')
       };
     });
   });
