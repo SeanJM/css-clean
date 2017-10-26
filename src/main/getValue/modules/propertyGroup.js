@@ -1,7 +1,8 @@
 const format = {
-  'background' : require('./propertyGroup/background.js'),
-  'background-image' : require('./propertyGroup/background.js'),
-  default : require('./propertyGroup/default.js'),
+  'grid-template-areas' : require('./propertyGroup/grid.js'),
+  'background'         : require('./propertyGroup/background.js'),
+  'background-image'   : require('./propertyGroup/background.js'),
+  default              : require('./propertyGroup/default.js'),
 };
 
 function propertyGroup(that, element, siblings) {

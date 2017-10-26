@@ -3,12 +3,12 @@ const path     = require('path');
 const cleanCss = require('../../index.js');
 
 const filename = {
-  clean : path.resolve('test/styles/media.clean.scss'),
-  dirty : path.resolve('test/styles/media.dirty.scss')
+  clean : path.resolve('test/styles/grid-template-areas.clean.scss'),
+  dirty : path.resolve('test/styles/grid-template-areas.dirty.scss')
 };
 
 module.exports = {
-  name : '@media',
+  name : 'grid-template-area',
   this : function () {
     const str = fs.readFileSync(filename.dirty, 'utf8');
 
