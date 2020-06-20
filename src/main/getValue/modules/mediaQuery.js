@@ -41,7 +41,7 @@ function mediaQuery(that, element, siblings) {
       tabChar : that.tabChar
     });
 
-    return tab + value;
+    return value;
   }).join(',\n');
 
   return `${element.name} \n${value} {\n${nest}${tab}}`;
